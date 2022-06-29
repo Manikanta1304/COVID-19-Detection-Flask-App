@@ -85,14 +85,14 @@ def uploaded_chest():
    image = np.array(image) / 255
    image = np.expand_dims(image, axis=0)
    
-   resnet_pred = resnet_chest.predict(image)
-   probability = resnet_pred[0]
-   print("Resnet Predictions:")
-   if probability[0] > 0.5:
-      resnet_chest_pred = str('%.2f' % (probability[0]*100) + '% COVID') 
-   else:
-      resnet_chest_pred = str('%.2f' % ((1-probability[0])*100) + '% NonCOVID')
-   print(resnet_chest_pred)
+#    resnet_pred = resnet_chest.predict(image)
+#    probability = resnet_pred[0]
+#    print("Resnet Predictions:")
+#    if probability[0] > 0.5:
+#       resnet_chest_pred = str('%.2f' % (probability[0]*100) + '% COVID') 
+#    else:
+#       resnet_chest_pred = str('%.2f' % ((1-probability[0])*100) + '% NonCOVID')
+#    print(resnet_chest_pred)
 
    vgg_pred = vgg_chest.predict(image)
    probability = vgg_pred[0]
@@ -121,7 +121,8 @@ def uploaded_chest():
       xception_chest_pred = str('%.2f' % ((1-probability[0])*100) + '% NonCOVID')
    print(xception_chest_pred)
 
-   return render_template('results_chest.html',resnet_chest_pred=resnet_chest_pred,vgg_chest_pred=vgg_chest_pred,inception_chest_pred=inception_chest_pred,xception_chest_pred=xception_chest_pred)
+#    return render_template('results_chest.html',resnet_chest_pred=resnet_chest_pred,vgg_chest_pred=vgg_chest_pred,inception_chest_pred=inception_chest_pred,xception_chest_pred=xception_chest_pred)
+   return render_template('results_chest.html',vgg_chest_pred=vgg_chest_pred,inception_chest_pred=inception_chest_pred,xception_chest_pred=xception_chest_pred)
 
 @app.route('/uploaded_ct', methods = ['POST', 'GET'])
 def uploaded_ct():
