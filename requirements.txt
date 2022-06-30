@@ -6,7 +6,7 @@ matplotlib>=1.4.3
 pandas>=0.19
 # opencv-python==4.0.0.21
 gunicorn
-itsdangerous==1.1.0
+itsdangerous>=1.1.0
 Jinja2==2.10.1
-MarkupSafe==1.1.1
-Werkzeug==0.15.5
+MarkupSafe>=1.1.1
+Werkzeug>=0.15.5
