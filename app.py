@@ -122,7 +122,7 @@ def uploaded_chest():
    print(xception_chest_pred)
 
 #    return render_template('results_chest.html',resnet_chest_pred=resnet_chest_pred,vgg_chest_pred=vgg_chest_pred,inception_chest_pred=inception_chest_pred,xception_chest_pred=xception_chest_pred)
-   return render_template('results_chest.html',vgg_chest_pred=vgg_chest_pred,inception_chest_pred=inception_chest_pred,xception_chest_pred=xception_chest_pred)
+   return render_template('results_chest.html',inception_chest_pred=inception_chest_pred)
 
 @app.route('/uploaded_ct', methods = ['POST', 'GET'])
 def uploaded_ct():
